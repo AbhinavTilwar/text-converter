@@ -1,4 +1,4 @@
-{
+{ "homepage": "https://AbhinavTilwar.github.io/text-converter",
   "name": "my_new_app",
   "version": "0.1.0",
   "private": true,
@@ -13,6 +13,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+   "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "dev": "node --openssl-legacy-provider ./node_modules/.bin/next dev",
     "build": "react-scripts build",

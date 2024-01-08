@@ -6,12 +6,9 @@ export default function TextForm(props) {
     const handelOnchange=(event)=>{
          console.log("Onchange")
          setText(event.target.value);
-        if(text.split(" ").length-1>= 5){
+         setLen(text.split(" ").length)
+        if(text.split(" ").length-1=== 5){
             props.showAlert("Maximum Limit Reached","warning");
-            setLen(5);
-        }else{
-            
-            setLen(text.split(" ").length)
         }
         
     }
@@ -26,6 +23,7 @@ export default function TextForm(props) {
     const OnClear=()=>{
         let newText='';
         setText(newText);
+        setLen(0);
     }
     const speak = () => {
         let msg = new SpeechSynthesisUtterance();
@@ -52,7 +50,7 @@ export default function TextForm(props) {
         
       <div className={`container my-4 text-${props.mode==='light'?'dark':'light'}`}>
       <h2> Your text summary </h2>
-        <p>{len} words {text.length-text.split(" ").length+1} characters</p>
+        <p>{text.split(" ").length===1?0:text.split(" ").length-1} words {text.length-len} characters</p>
     </div>
     
     </>

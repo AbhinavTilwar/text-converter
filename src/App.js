@@ -5,12 +5,12 @@ import About from "./components/About";
 import React, { useState } from 'react'
 import Alert from "./components/Alert";
 import Footer from "./components/Footer";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter,
+//   Routes,
+//   Route,
+//   Link
+// } from "react-router-dom";
 
 function App() {
   const[mode,setmode]=useState('light');
@@ -40,19 +40,20 @@ function App() {
     }
   return (
     <>
-    <BrowserRouter>
+    {/* <BrowserRouter> */}
         <Navbar title="TextConverter" mode={mode}  toggleMode={toggleMode} aboutText="About"/>
         <Alert alert={alert}/>
         
          <div className="container" mode={mode}>
-          <Routes>  
+          {/* <Routes>  
               <Route exact path="/about" element={<About />} />
           
               < Route exact path="/" element= {<TextForm heading="Enter text to convert" mode={mode} showAlert={showAlert}/>} /> 
-          </Routes>
+          </Routes> */}
+          <TextForm heading="Enter text to convert" mode={mode} showAlert={showAlert}/>
          </div>
         <Footer mode={mode}/>
-    </BrowserRouter>
+    {/* </BrowserRouter> */}
 
     </>
   );
